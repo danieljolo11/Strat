@@ -9,11 +9,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const { height, width } = Dimensions.get("window");
 
-interface MainFunction {
-  navigation: any;
-}
-
-const LandingPage = ({ navigation }: MainFunction) => {
+const LandingPage = ({ navigation }: NavigationParams) => {
   return (
     <SafeAreaView edges={["bottom", "left", "right"]} style={styles.container}>
       <View

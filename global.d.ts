@@ -14,3 +14,7 @@ interface IsNotLoginInterface {
   component: React.FCComponent;
   option: OptionInterface;
 }
+
+interface NavigationParams {
+  navigation: any;
+}
