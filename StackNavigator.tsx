@@ -42,7 +42,7 @@ const StackNavigator = () => {
     },
   });
 
-  const isLoggedIn = async (): Promise<any> => {
+  const isLoggedIn = () => {
     const screens: StackScreenInterface = [
       {
         name: "home",
