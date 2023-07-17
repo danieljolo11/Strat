@@ -7,21 +7,59 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { shallow } from "zustand/shallow";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+import { routesPostApi } from "../../api/api_routes";
+import { tokenStore } from "../../zustand/logintoken";
 
 import Ionic from "react-native-vector-icons/Ionicons";
 
 const { height, width } = Dimensions.get("window");
 
+interface LoginFormInterface {
+  email?: string;
+  password?: string;
+}
+
 export default function Login({ navigation }: NavigationParams) {
+  // zustand
+  const { storeTokenAction } = tokenStore((state) => state, shallow);
+
+  // local state
+  const [formValues, setFormValues] = useState<LoginFormInterface>({
+    email: "",
+    password: "",
+  });
+  const [showPassword, setShowPassword] = useState<boolean>(true);
+
+  const loginAction = async (): Promise<void> => {
+    const params = {
+      ...formValues,
+    } as LoginFormInterface;
+    await routesPostApi("/user/login", params).then(async (response) => {
+      console.log("response:", response);
+      if (response.status === 201) {
+        const { token } = response.data;
+        storeTokenAction(token);
+        await AsyncStorage.setItem("token", token);
+      } else {
+        alert("Incorrect username or password");
+      }
+    });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View
         style={[StyleSheet.absoluteFillObject, { backgroundColor: "white" }]}
       />
       <View style={{ paddingVertical: height * 0.02 }}>
-        <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate("landingpage")}
+        >
           <Ionic name="chevron-back" size={height * 0.035} color="#050505" />
         </TouchableWithoutFeedback>
       </View>
@@ -36,20 +74,27 @@ export default function Login({ navigation }: NavigationParams) {
           autoCapitalize="none"
           keyboardType="email-address"
           cursorColor="#474A56"
+          value={formValues.email}
+          onChangeText={(text) => setFormValues({ ...formValues, email: text })}
         />
         <View style={{ flexDirection: "row" }}>
           <TextInput
             style={[styles.textinputdisplay, { width: "100%" }]}
             placeholder="password"
             autoCapitalize="none"
-            secureTextEntry={true}
+            secureTextEntry={showPassword}
             cursorColor="#474A56"
+            value={formValues.password}
+            onChangeText={(text) =>
+              setFormValues({ ...formValues, password: text })
+            }
           />
           <Ionic
+            onPress={() => setShowPassword(!showPassword)}
             style={styles.iconDesign}
             color="#050505"
             size={height * 0.03}
-            name="md-eye"
+            name={showPassword ? "md-eye-off" : "md-eye"}
           />
         </View>
         <View
@@ -63,10 +108,7 @@ export default function Login({ navigation }: NavigationParams) {
             Don't have an account?{" "}
             <Text style={styles.registertext}>Register</Text>
           </Text>
-          <TouchableOpacity
-            style={styles.btntxtdisplay}
-            onPress={() => console.log("Login")}
-          >
+          <TouchableOpacity style={styles.btntxtdisplay} onPress={loginAction}>
             <Text style={styles.btntext}>Sign In</Text>
           </TouchableOpacity>
         </View>
@@ -103,7 +145,7 @@ const styles = StyleSheet.create({
     color: "#050505",
     marginVertical: height * 0.01,
     borderColor: "#050505",
-    backgroundColor: "#F7F7F7"
+    backgroundColor: "#F7F7F7",
   },
   donthaveaccounttext: {
     fontFamily: "Poppins",

@@ -9,7 +9,7 @@ interface OptionInterface {
   cardStyleInterpolator: any;
 }
 
-interface IsNotLoginInterface {
+interface StackScreenInterface {
   name: string;
   component: React.FCComponent;
   option: OptionInterface;
