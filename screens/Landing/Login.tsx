@@ -9,9 +9,13 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { shallow } from "zustand/shallow";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+import { routesPostApi } from "../../api/api_routes";
+import { tokenStore } from "../../zustand/logintoken";
 
 import Ionic from "react-native-vector-icons/Ionicons";
-import { routesPostApi } from "../../api/api_routes";
 
 const { height, width } = Dimensions.get("window");
 
@@ -21,6 +25,10 @@ interface LoginFormInterface {
 }
 
 export default function Login({ navigation }: NavigationParams) {
+  // zustand
+  const { storeTokenAction } = tokenStore((state) => state, shallow);
+
+  // local state
   const [formValues, setFormValues] = useState<LoginFormInterface>({
     email: "",
     password: "",
@@ -31,10 +39,12 @@ export default function Login({ navigation }: NavigationParams) {
     const params = {
       ...formValues,
     } as LoginFormInterface;
-    await routesPostApi("/user/login", params).then((response) => {
-      console.log("response:", response)
+    await routesPostApi("/user/login", params).then(async (response) => {
+      console.log("response:", response);
       if (response.status === 201) {
-        return navigation.navigate("home");
+        const { token } = response.data;
+        storeTokenAction(token);
+        await AsyncStorage.setItem("token", token);
       } else {
         alert("Incorrect username or password");
       }

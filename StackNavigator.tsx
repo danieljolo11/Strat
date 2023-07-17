@@ -2,6 +2,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { View, Text } from "react-native";
 
 // Landing
 import LandingPage from "./screens/Landing/LandingPage";
@@ -37,7 +39,10 @@ const StackNavigator = () => {
     },
   });
 
-  const isLoggedIn = () => {
+  const isLoggedIn = async (): Promise<any> => {
+    // const token = await AsyncStorage.getItem("token");
+    // console.log("token:", token)
+
     const screens: StackScreenInterface = [
       {
         name: "home",
@@ -110,7 +115,7 @@ const StackNavigator = () => {
   };
 
   const isNotLoggedIn = () => {
-    const screens: IsNotLoginInterface = [
+    const screens: IsNotLoginInterface[] = [
       {
         name: "landingpage",
         component: LandingPage,
@@ -126,16 +131,11 @@ const StackNavigator = () => {
         component: Register,
         option: { headerShown: false, cardStyleInterpolator: forTranslate },
       },
-      {
-        name: "home",
-        component: Home,
-        option: { headerShown: false },
-      },
     ];
 
     return (
-      <>
-        <Stack.Navigator initialRouteName="home">
+      <React.Fragment>
+        <Stack.Navigator initialRouteName="landingpage">
           {screens.map(({ name, component, option }: IsNotLoginInterface) => (
             <Stack.Screen
               key={name}
@@ -145,16 +145,11 @@ const StackNavigator = () => {
             />
           ))}
         </Stack.Navigator>
-      </>
+      </React.Fragment>
     );
   };
 
-  return (
-    <>
-      {isLoggedIn()}
-      {/* {isNotLoggedIn()} */}
-    </>
-  );
+  return <React.Fragment>{isNotLoggedIn()}</React.Fragment>;
 };
 
 export default StackNavigator;
