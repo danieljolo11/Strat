@@ -114,7 +114,15 @@ const StackNavigator = () => {
     );
   };
 
+  const getToken = async (): Promise<string> => {
+    const token = await AsyncStorage.getItem("token");
+
+    return token;
+  };
+
   const isNotLoggedIn = () => {
+    const token = getToken();
+
     const screens: IsNotLoginInterface[] = [
       {
         name: "landingpage",
