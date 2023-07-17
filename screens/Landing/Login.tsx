@@ -40,7 +40,6 @@ export default function Login({ navigation }: NavigationParams) {
       ...formValues,
     } as LoginFormInterface;
     await routesPostApi("/user/login", params).then(async (response) => {
-      console.log("response:", response);
       if (response.status === 201) {
         const { token } = response.data;
         storeTokenAction(token);

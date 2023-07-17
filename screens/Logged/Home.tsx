@@ -1,12 +1,32 @@
-import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
-import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Image,
+  TextInput,
+} from "react-native";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { shallow } from "zustand/shallow";
+import { tokenStore } from "../../zustand/logintoken";
 
 import Ionic from "react-native-vector-icons/Ionicons";
 
 const { height, width } = Dimensions.get("window");
 
 const Home = () => {
+  // zustand
+  const { storeTokenAction } = tokenStore((state) => state, shallow);
+
+  const [showSearch, setShowSearch] = useState<boolean>(false);
+
+  const logout = async (): Promise<void> => {
+    await AsyncStorage.removeItem("token");
+    storeTokenAction("");
+  };
+
   const friends = [
     {
       id: 1,
@@ -45,34 +65,69 @@ const Home = () => {
       desc: "Lorem Ipsum is lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
   ];
-  
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View
         style={[StyleSheet.absoluteFillObject, { backgroundColor: "white" }]}
       />
-      <View
-        style={{
-          flex: 0.07,
-          paddingHorizontal: width * 0.05,
-          paddingVertical: height * 0.02,
-        }}
-      >
+      {!showSearch && (
         <View
           style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
+            height: height * 0.07,
+            marginVertical: height * 0.015,
+            paddingHorizontal: width * 0.05,
           }}
         >
-          <Ionic
-            size={height * 0.055}
-            name="person-circle-sharp"
-            color="#050505"
-          />
-          <Ionic size={height * 0.03} name="search" color="#050505" />
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Ionic
+              onPress={logout}
+              size={height * 0.055}
+              name="person-circle-sharp"
+              color="#050505"
+            />
+            <Ionic
+              onPress={() => setShowSearch(!showSearch)}
+              size={height * 0.03}
+              name="search"
+              color="#050505"
+            />
+          </View>
         </View>
-      </View>
+      )}
+
+      {showSearch && (
+        <View>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <TextInput
+              style={styles.serachinput}
+              placeholder="Search..."
+              autoCapitalize="none"
+              cursorColor="#474A56"
+              autoFocus={true}
+            />
+            <Ionic
+              onPress={() => setShowSearch(false)}
+              style={styles.iconDesign}
+              size={height * 0.025}
+              name="arrow-back-outline"
+            />
+          </View>
+        </View>
+      )}
+
       <View style={{ flex: 1, paddingHorizontal: width * 0.05 }}>
         {friends.map((item) => (
           <View
@@ -146,5 +201,27 @@ const Home = () => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  serachinput: {
+    width: width,
+    // borderWidth: 1,
+    height: height * 0.07,
+    paddingVertical: height * 0.015,
+    paddingLeft: width * 0.15,
+    paddingRight: width * 0.05,
+    fontFamily: "Poppins",
+    fontSize: 15,
+    lineHeight: 27,
+    color: "#050505",
+    marginVertical: height * 0.015,
+  },
+  iconDesign: {
+    position: "absolute",
+    left: width * 0.05,
+    top: height * 0.035,
+    elevation: 2,
+  },
+});
 
 export default Home;

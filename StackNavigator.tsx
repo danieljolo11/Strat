@@ -2,8 +2,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View, Text } from "react-native";
+import { shallow } from "zustand/shallow";
 
 // Landing
 import LandingPage from "./screens/Landing/LandingPage";
@@ -12,10 +11,14 @@ import Register from "./screens/Landing/Register";
 import Home from "./screens/Logged/Home";
 
 import Ionic from "react-native-vector-icons/Ionicons";
+import { tokenStore } from "./zustand/logintoken";
 
 const StackNavigator = () => {
   const Stack = createStackNavigator();
   const Tab = createBottomTabNavigator();
+
+  // zustand
+  const { token } = tokenStore((state) => state, shallow);
 
   // for translate animation screen to screen
   const forTranslate = ({ current, next, layouts }: TranslateInterface) => ({
@@ -39,10 +42,7 @@ const StackNavigator = () => {
     },
   });
 
-  const isLoggedIn = async (): Promise<any> => {
-    // const token = await AsyncStorage.getItem("token");
-    // console.log("token:", token)
-
+  const isLoggedIn = () => {
     const screens: StackScreenInterface = [
       {
         name: "home",
@@ -99,18 +99,22 @@ const StackNavigator = () => {
     ];
 
     return (
-      <>
-        <Tab.Navigator initialRouteName="home">
-          {screens.map(({ name, component, option }: StackScreenInterface) => (
-            <Tab.Screen
-              key={name}
-              name={name}
-              component={component}
-              options={option}
-            />
-          ))}
-        </Tab.Navigator>
-      </>
+      token && (
+        <>
+          <Tab.Navigator initialRouteName="home">
+            {screens.map(
+              ({ name, component, option }: StackScreenInterface) => (
+                <Tab.Screen
+                  key={name}
+                  name={name}
+                  component={component}
+                  options={option}
+                />
+              )
+            )}
+          </Tab.Navigator>
+        </>
+      )
     );
   };
 
@@ -134,22 +138,29 @@ const StackNavigator = () => {
     ];
 
     return (
-      <React.Fragment>
-        <Stack.Navigator initialRouteName="landingpage">
-          {screens.map(({ name, component, option }: IsNotLoginInterface) => (
-            <Stack.Screen
-              key={name}
-              name={name}
-              component={component}
-              options={option}
-            />
-          ))}
-        </Stack.Navigator>
-      </React.Fragment>
+      !token && (
+        <React.Fragment>
+          <Stack.Navigator initialRouteName="landingpage">
+            {screens.map(({ name, component, option }: IsNotLoginInterface) => (
+              <Stack.Screen
+                key={name}
+                name={name}
+                component={component}
+                options={option}
+              />
+            ))}
+          </Stack.Navigator>
+        </React.Fragment>
+      )
     );
   };
 
-  return <React.Fragment>{isNotLoggedIn()}</React.Fragment>;
+  return (
+    <React.Fragment>
+      {isLoggedIn()}
+      {isNotLoggedIn()}
+    </React.Fragment>
+  );
 };
 
 export default StackNavigator;

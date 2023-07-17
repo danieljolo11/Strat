@@ -7,11 +7,17 @@ import { useCallback, useEffect } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { RootSiblingParent } from "react-native-root-siblings";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // components
 import StackNavigator from "./StackNavigator";
+import { tokenStore } from "./zustand/logintoken";
+import { shallow } from "zustand/shallow";
 
 export default function App() {
+  // zustand
+  const { storeTokenAction } = tokenStore((state) => state, shallow);
+
   const [fontsLoaded] = useFonts({
     Poppins: require("./assets/Fonts/Poppins-Regular.otf"),
     Poppins500: require("./assets/Fonts/Poppins-Medium.otf"),
@@ -24,7 +30,13 @@ export default function App() {
       await SplashScreen.preventAutoHideAsync();
     }
     prepare();
+    getToken();
   }, []);
+
+  const getToken = async (): Promise<any> => {
+    const storageToken = await AsyncStorage.getItem("token");
+    storeTokenAction(storageToken ?? "");
+  };
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
