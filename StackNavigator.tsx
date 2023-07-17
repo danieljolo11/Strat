@@ -42,7 +42,7 @@ const StackNavigator = () => {
     },
   });
 
-  const isLoggedIn = () => {
+  const isLoggedIn = async (): Promise<any> => {
     const screens: StackScreenInterface = [
       {
         name: "home",
@@ -100,7 +100,7 @@ const StackNavigator = () => {
 
     return (
       token && (
-        <>
+        <React.Fragment>
           <Tab.Navigator initialRouteName="home">
             {screens.map(
               ({ name, component, option }: StackScreenInterface) => (
@@ -113,7 +113,7 @@ const StackNavigator = () => {
               )
             )}
           </Tab.Navigator>
-        </>
+        </React.Fragment>
       )
     );
   };

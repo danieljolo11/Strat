@@ -65,7 +65,7 @@ const Home = () => {
       desc: "Lorem Ipsum is lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
   ];
-
+  
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View
