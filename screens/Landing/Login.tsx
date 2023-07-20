@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { shallow } from "zustand/shallow";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -25,6 +25,8 @@ interface LoginFormInterface {
 }
 
 export default function Login({ navigation }: NavigationParams) {
+  const secondTextInput = useRef<any>(null);
+
   // zustand
   const { storeTokenAction } = tokenStore((state) => state, shallow);
 
@@ -73,11 +75,18 @@ export default function Login({ navigation }: NavigationParams) {
           autoCapitalize="none"
           keyboardType="email-address"
           cursorColor="#474A56"
+          returnKeyType="next"
+          autoFocus={false}
+          blurOnSubmit={false}
           value={formValues.email}
           onChangeText={(text) => setFormValues({ ...formValues, email: text })}
+          onSubmitEditing={() => {
+            secondTextInput.current.focus();
+          }}
         />
         <View style={{ flexDirection: "row" }}>
           <TextInput
+            ref={secondTextInput}
             style={[styles.textinputdisplay, { width: "100%" }]}
             placeholder="password"
             autoCapitalize="none"
@@ -87,6 +96,7 @@ export default function Login({ navigation }: NavigationParams) {
             onChangeText={(text) =>
               setFormValues({ ...formValues, password: text })
             }
+            onSubmitEditing={loginAction}
           />
           <Ionic
             onPress={() => setShowPassword(!showPassword)}
