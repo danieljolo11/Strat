@@ -1,12 +1,25 @@
-import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
-import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Image,
+  FlatList,
+} from "react-native";
+import React, { Fragment } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import Ionic from "react-native-vector-icons/Ionicons";
+import Header from "../Components/Header/Header";
+import Container from "../Components/Container/Container";
 
 const { height, width } = Dimensions.get("window");
 
-const Home = () => {
+interface headerContainer {
+  title: string;
+}
+
+const Home = ({ navigation }: NavigationParams) => {
   const friends = [
     {
       id: 1,
@@ -45,36 +58,20 @@ const Home = () => {
       desc: "Lorem Ipsum is lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
   ];
-  
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View
-        style={[StyleSheet.absoluteFillObject, { backgroundColor: "white" }]}
-      />
-      <View
-        style={{
-          flex: 0.07,
-          paddingHorizontal: width * 0.05,
-          paddingVertical: height * 0.02,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <Ionic
-            size={height * 0.055}
-            name="person-circle-sharp"
-            color="#050505"
-          />
-          <Ionic size={height * 0.03} name="search" color="#050505" />
-        </View>
-      </View>
-      <View style={{ flex: 1, paddingHorizontal: width * 0.05 }}>
-        {friends.map((item) => (
+
+  const searchHeader = () => {
+    const propsContainer = {
+      title: "Messages",
+    } as headerContainer;
+
+    return <Header {...propsContainer} />;
+  };
+
+  const body = () => {
+    const messagesListDisplay = () => {
+      const messageList = (props: any) => {
+        const { item } = props;
+        return (
           <View
             style={{
               flexDirection: "row",
@@ -141,10 +138,20 @@ const Home = () => {
               </View>
             </View>
           </View>
-        ))}
-      </View>
-    </SafeAreaView>
-  );
+        );
+      };
+
+      return <FlatList data={friends} renderItem={messageList} />;
+    };
+    return (
+      <>
+        {searchHeader()}
+        {messagesListDisplay()}
+      </>
+    );
+  };
+
+  return <Container display={body} />;
 };
 
 export default Home;

@@ -11,7 +11,15 @@ import Login from "./screens/Landing/Login";
 import Register from "./screens/Landing/Register";
 import Home from "./screens/Logged/Home";
 
-import Ionic from "react-native-vector-icons/Ionicons";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import SearchUser from "./screens/Logged/SearchUser/SearchUser";
+interface loggedInComponent<T> {
+  name: string;
+  component: T;
+  option: {
+    headerShown: boolean;
+  };
+}
 
 const StackNavigator = () => {
   const Stack = createStackNavigator();
@@ -39,84 +47,68 @@ const StackNavigator = () => {
     },
   });
 
-  const isLoggedIn = async (): Promise<any> => {
-    // const token = await AsyncStorage.getItem("token");
-    // console.log("token:", token)
-
-    const screens: StackScreenInterface = [
+  const isLoggedIn = () => {
+    const loggedScreen: any = [
       {
-        name: "home",
+        name: "Home",
         component: Home,
         option: {
-          headerShown: false,
-          tabBarIcon: ({ size, focused, color }) => {
-            return <Ionic size={size} name="home" />;
-          },
-          tabBarLabel: () => {
-            return null;
+          tabBarIcon: () => {
+            return <Ionicons size={5} name="home" color="#050505" />;
           },
         },
       },
       {
-        name: "test",
-        component: Home,
+        name: "Search",
+        component: SearchUser,
         option: {
-          headerShown: false,
-          tabBarIcon: ({ size, focused, color }) => {
-            return <Ionic size={size} name="home" />;
-          },
-          tabBarLabel: () => {
-            return null;
-          },
-        },
-      },
-      {
-        name: "test2",
-        component: Home,
-        option: {
-          headerShown: false,
-          tabBarIcon: ({ size, focused, color }) => {
-            return <Ionic size={size} name="home" />;
-          },
-          tabBarLabel: () => {
-            return null;
-          },
-        },
-      },
-      {
-        name: "test3",
-        component: Home,
-        option: {
-          headerShown: false,
-          tabBarIcon: ({ size, focused, color }) => {
-            return <Ionic size={size} name="home" />;
-          },
-          tabBarLabel: () => {
-            return null;
+          tabBarIcon: () => {
+            return <Ionicons size={5} name="search" />;
           },
         },
       },
     ];
 
     return (
-      <>
-        <Tab.Navigator initialRouteName="home">
-          {screens.map(({ name, component, option }: StackScreenInterface) => (
-            <Tab.Screen
-              key={name}
-              name={name}
-              component={component}
-              options={option}
-            />
-          ))}
-        </Tab.Navigator>
-      </>
+      <Tab.Navigator screenOptions={{ headerShown: false }}>
+        {loggedScreen.map((item: any) => {
+          const { name, component, option } = item;
+          return (
+            <Tab.Screen name={name} component={component} option={option} />
+          );
+        })}
+
+        {/* <Tab.Screen
+            key={1}
+            name={"Home"}
+            component={Home}
+            option={{
+              headerShown: false,
+              tabBarIcon: () => {
+                return <Ionic size={15} name="home" />;
+              },
+              tabBarLabel: () => {
+                return "Home";
+              }
+            }}
+          /> */}
+        {/* {screens.map((results: any, index: number) => {
+            const { name, component, option, key } = results;
+            return (
+              <Tab.Screen
+                key={key}
+                name={name}
+                component={component}
+                option={option}
+              />
+            );
+          })} */}
+      </Tab.Navigator>
     );
   };
 
   const getToken = async (): Promise<string> => {
     const token = await AsyncStorage.getItem("token");
-
     return token;
   };
 
@@ -141,7 +133,7 @@ const StackNavigator = () => {
       },
     ];
 
-    return (
+    return !token ? (
       <React.Fragment>
         <Stack.Navigator initialRouteName="landingpage">
           {screens.map(({ name, component, option }: IsNotLoginInterface) => (
@@ -154,10 +146,16 @@ const StackNavigator = () => {
           ))}
         </Stack.Navigator>
       </React.Fragment>
-    );
+    ) : null;
   };
 
-  return <React.Fragment>{isNotLoggedIn()}</React.Fragment>;
+  return (
+    <React.Fragment>
+      {isNotLoggedIn()}
+      {/* {isLoggedIn()} */}
+      {isLoggedIn()}
+    </React.Fragment>
+  );
 };
 
 export default StackNavigator;

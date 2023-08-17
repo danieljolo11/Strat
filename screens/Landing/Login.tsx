@@ -39,12 +39,13 @@ export default function Login({ navigation }: NavigationParams) {
     const params = {
       ...formValues,
     } as LoginFormInterface;
+
     await routesPostApi("/user/login", params).then(async (response) => {
-      console.log("response:", response);
       if (response.status === 201) {
         const { token } = response.data;
         storeTokenAction(token);
         await AsyncStorage.setItem("token", token);
+        return navigation.navigate("home")
       } else {
         alert("Incorrect username or password");
       }
@@ -75,7 +76,7 @@ export default function Login({ navigation }: NavigationParams) {
           keyboardType="email-address"
           cursorColor="#474A56"
           value={formValues.email}
-          onChangeText={(text) => setFormValues({ ...formValues, email: text })}
+          onChangeText={(text: string) => setFormValues({ ...formValues, email: text })}
         />
         <View style={{ flexDirection: "row" }}>
           <TextInput
@@ -85,7 +86,7 @@ export default function Login({ navigation }: NavigationParams) {
             secureTextEntry={showPassword}
             cursorColor="#474A56"
             value={formValues.password}
-            onChangeText={(text) =>
+            onChangeText={(text: string) =>
               setFormValues({ ...formValues, password: text })
             }
           />
