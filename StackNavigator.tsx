@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React from "react";
+import React, { useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -13,6 +13,11 @@ import Home from "./screens/Logged/Home";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import SearchUser from "./screens/Logged/SearchUser/SearchUser";
+import Chat from "./screens/Logged/Chat/Chat";
+import { NavigationContainer } from "@react-navigation/native";
+import { useEffect } from "react";
+import { getStorageValue } from "./api/global_script";
+
 interface loggedInComponent<T> {
   name: string;
   component: T;
@@ -22,98 +27,108 @@ interface loggedInComponent<T> {
 }
 
 const StackNavigator = () => {
-  const Stack = createStackNavigator();
+  const Stack = createStackNavigator<RootStackParamList>();
   const Tab = createBottomTabNavigator();
 
-  // for translate animation screen to screen
-  const forTranslate = ({ current, next, layouts }: TranslateInterface) => ({
-    cardStyle: {
-      transform: [
-        {
-          translateX: current.progress.interpolate({
-            inputRange: [0, 1],
-            outputRange: [layouts.screen.width, 0],
-          }),
-        },
-        {
-          translateX: next
-            ? next.progress.interpolate({
-                inputRange: [0, 1],
-                outputRange: [0, -layouts.screen.width],
-              })
-            : 1,
-        },
-      ],
-    },
-  });
+  const [authorized, setAuthorized] = useState<boolean>();
 
-  const isLoggedIn = () => {
-    const loggedScreen: any = [
-      {
-        name: "Home",
-        component: Home,
-        option: {
-          tabBarIcon: () => {
-            return <Ionicons size={5} name="home" color="#050505" />;
-          },
-        },
-      },
-      {
-        name: "Search",
-        component: SearchUser,
-        option: {
-          tabBarIcon: () => {
-            return <Ionicons size={5} name="search" />;
-          },
-        },
-      },
-    ];
+  useEffect(async () => {
+    const authorized = await getToken();
+    setAuthorized(!!authorized);
+  }, []);
 
-    return (
-      <Tab.Navigator screenOptions={{ headerShown: false }}>
-        {loggedScreen.map((item: any) => {
-          const { name, component, option } = item;
-          return (
-            <Tab.Screen name={name} component={component} option={option} />
-          );
-        })}
-
-        {/* <Tab.Screen
-            key={1}
-            name={"Home"}
-            component={Home}
-            option={{
-              headerShown: false,
-              tabBarIcon: () => {
-                return <Ionic size={15} name="home" />;
-              },
-              tabBarLabel: () => {
-                return "Home";
-              }
-            }}
-          /> */}
-        {/* {screens.map((results: any, index: number) => {
-            const { name, component, option, key } = results;
-            return (
-              <Tab.Screen
-                key={key}
-                name={name}
-                component={component}
-                option={option}
-              />
-            );
-          })} */}
-      </Tab.Navigator>
-    );
-  };
-
-  const getToken = async (): Promise<string> => {
-    const token = await AsyncStorage.getItem("token");
+  const getToken = async (): Promise<any> => {
+    const token = await getStorageValue("token");
     return token;
   };
 
-  const isNotLoggedIn = () => {
-    const token = getToken();
+  const isLoggedIn = () => {
+    const TabNavigation = () => {
+      const loggedScreen: any = [
+        {
+          name: "Home",
+          component: Home,
+          option: {
+            tabBarIcon: () => {
+              return <Ionicons size={5} name="home" color="#050505" />;
+            },
+          },
+        },
+        {
+          name: "Search",
+          component: SearchUser,
+          option: {
+            tabBarIcon: () => {
+              return <Ionicons size={5} name="search" />;
+            },
+          },
+        },
+      ];
+
+      return (
+        <Tab.Navigator screenOptions={{ headerShown: false }}>
+          {loggedScreen.map((item: any) => (
+            <Tab.Screen {...item} />
+          ))}
+        </Tab.Navigator>
+      );
+    };
+
+    const StackNavigation = () => {
+      const screens: any[] = [
+        {
+          name: "home",
+          component: TabNavigation,
+          option: { headerShown: false },
+        },
+        {
+          name: "chat",
+          component: Chat,
+          option: { headerShown: false },
+        },
+      ];
+
+      return (
+        <NavigationContainer independent>
+          <Stack.Navigator
+            initialRouteName="home"
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            {screens.map((item) => (
+              <Stack.Screen {...item} />
+            ))}
+          </Stack.Navigator>
+        </NavigationContainer>
+      );
+    };
+
+    return authorized ? <>{StackNavigation()}</> : null;
+  };
+
+  const isNotLoggedIn = (): any => {
+    // for translate animation screen to screen
+    const forTranslate = ({ current, next, layouts }: TranslateInterface) => ({
+      cardStyle: {
+        transform: [
+          {
+            translateX: current.progress.interpolate({
+              inputRange: [0, 1],
+              outputRange: [layouts.screen.width, 0],
+            }),
+          },
+          {
+            translateX: next
+              ? next.progress.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0, -layouts.screen.width],
+                })
+              : 1,
+          },
+        ],
+      },
+    });
 
     const screens: IsNotLoginInterface[] = [
       {
@@ -133,7 +148,7 @@ const StackNavigator = () => {
       },
     ];
 
-    return !token ? (
+    return !authorized ? (
       <React.Fragment>
         <Stack.Navigator initialRouteName="landingpage">
           {screens.map(({ name, component, option }: IsNotLoginInterface) => (
@@ -152,7 +167,6 @@ const StackNavigator = () => {
   return (
     <React.Fragment>
       {isNotLoggedIn()}
-      {/* {isLoggedIn()} */}
       {isLoggedIn()}
     </React.Fragment>
   );

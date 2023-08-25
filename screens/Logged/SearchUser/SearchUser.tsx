@@ -1,10 +1,12 @@
-import React, { FC, useRef } from "react";
+import React, { FC, useRef, useState } from "react";
 import {
   View,
   Text,
   Dimensions,
   FlatList,
   TouchableOpacity,
+  TextInput,
+  StyleSheet,
 } from "react-native";
 import Container from "../../Components/Container/Container";
 import Header from "../../Components/Header/Header";
@@ -15,8 +17,13 @@ const { height, width } = Dimensions.get("window");
 
 // Icon
 import Ionic from "react-native-vector-icons/Ionicons";
-import { widthPercentageToDP } from "react-native-responsive-screen";
+import {
+  heightPercentageToDP as h,
+  widthPercentageToDP as w,
+} from "react-native-responsive-screen";
 import { Modalize } from "react-native-modalize";
+import { routesPostApi, routesPostApiAuth } from "../../../api/api_routes";
+import { AxiosResponse } from "axios";
 
 interface userType {
   _id: string;
@@ -30,9 +37,38 @@ interface headerContainer {
   title: string;
 }
 
+interface createRoomParameter {
+  roomName: string;
+  participants?: (string | undefined)[];
+}
+
 const SearchUser: FC = () => {
   const modalizeRef = useRef<Modalize>();
   const { userList } = getUserAction();
+  const openModal = () => modalizeRef.current?.open();
+  const closeModal = () => modalizeRef.current?.close();
+
+  // Local State
+  const [userContainer, setUserContainer] = useState<userType>();
+  const [roomName, setRoomName] = useState<string>("");
+
+  const createRoomAction = async (): Promise<void> => {
+    const path: string = "/room/createroom";
+
+    const participants = [];
+    participants.push(userContainer?._id);
+
+    const params: createRoomParameter = {
+      roomName: roomName,
+      participants: participants,
+    };
+    
+    await routesPostApiAuth(path, params)
+      .then((res: AxiosResponse<any, any> | { data: {}; status: any }) =>
+        console.log("res", res)
+      )
+      .catch((err) => console.log("err", err));
+  };
 
   const searchHeader = () => {
     const propsContainer = {
@@ -55,7 +91,7 @@ const SearchUser: FC = () => {
     const userListDisplay = (props: { item: userType }) => {
       const { item } = props;
       return (
-        <View
+        <TouchableOpacity
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
@@ -73,7 +109,7 @@ const SearchUser: FC = () => {
             <View>
               <Text
                 style={{
-                  paddingLeft: widthPercentageToDP("2%"),
+                  paddingLeft: w("2%"),
                   fontFamily: "Poppins500",
                   fontSize: height * 0.019,
                   color: "#050505",
@@ -99,6 +135,10 @@ const SearchUser: FC = () => {
                 borderWidth: 1,
                 borderRadius: 10,
               }}
+              onPress={() => {
+                setUserContainer(item);
+                return openModal();
+              }}
             >
               <View>
                 <Text
@@ -115,7 +155,7 @@ const SearchUser: FC = () => {
               </View>
             </TouchableOpacity>
           </View>
-        </View>
+        </TouchableOpacity>
       );
     };
 
@@ -131,12 +171,91 @@ const SearchUser: FC = () => {
         withHandle={false}
         modalStyle={{ borderTopRightRadius: 32, borderTopLeftRadius: 32 }}
       >
-
+        <View style={{ padding: h("2%") }}>
+          <View
+            style={{
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              paddingBottom: h("2%"),
+            }}
+          >
+            <View>
+              <Text style={{ fontFamily: "Poppins600", fontSize: h("3%") }}>
+                Create New Room
+              </Text>
+            </View>
+            <View>
+              <Text style={{ fontFamily: "Poppins500", fontSize: h("2%") }}>
+                Have Conversation With
+              </Text>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View>
+                <Ionic
+                  size={height * 0.03}
+                  name="person-circle-sharp"
+                  color="#aeaeb2"
+                />
+              </View>
+              <View>
+                <Text
+                  style={{
+                    fontFamily: "Poppins600",
+                    fontSize: h("2%"),
+                    paddingLeft: w("2%"),
+                  }}
+                >
+                  {userContainer?.email}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View>
+            <TextInput
+              style={styles.input}
+              placeholder={"Enter Room Name"}
+              onChangeText={(value) => setRoomName(value)}
+              value={roomName}
+            />
+          </View>
+          <View>
+            <TouchableOpacity
+              style={styles.btntxtdisplay}
+              onPress={createRoomAction}
+            >
+              <Text style={styles.btntext}>Create Room</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </Modalize>
     );
   };
-  
+
   return <Container display={searchBodyDisplay} modal={renderModal} />;
 };
 
 export default SearchUser;
+
+const styles = StyleSheet.create({
+  input: {
+    height: 50,
+    marginVertical: h("2%"),
+    borderWidth: 1,
+    borderColor: "#aeaeb2",
+    borderRadius: 10,
+    padding: 10,
+  },
+  btntxtdisplay: {
+    backgroundColor: "#F7F7F7",
+    alignItems: "center",
+    borderRadius: 10,
+    paddingVertical: height * 0.0175,
+  },
+  btntext: {
+    fontFamily: "Poppins500",
+    fontSize: 16,
+    lineHeight: 26,
+    color: "#050505",
+  },
+});

@@ -5,13 +5,17 @@ import {
   Dimensions,
   Image,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
-import React, { Fragment } from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import Ionic from "react-native-vector-icons/Ionicons";
 import Header from "../Components/Header/Header";
 import Container from "../Components/Container/Container";
+import { routesGetApiAuth, ResponseType } from "../../api/api_routes";
+import { useEffect } from "react";
+import { AxiosResponse } from "axios";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 const { height, width } = Dimensions.get("window");
 
@@ -19,45 +23,39 @@ interface headerContainer {
   title: string;
 }
 
+interface userDetails {
+  roomId: string;
+  userType: "Admin" | "SuperAdmin";
+}
+
+interface roomDetails {
+  _id: string;
+  roomName: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface userListDetailsType {
+  _id: userDetails;
+  roomDetails: [roomDetails];
+  count: number;
+}
+
 const Home = ({ navigation }: NavigationParams) => {
-  const friends = [
-    {
-      id: 1,
-      image: require("../../assets/testimage2.png"),
-      name: "Dolce Amore",
-      desc: "Lorem Ipsum is lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    },
-    {
-      id: 2,
-      image: require("../../assets/testimage2.png"),
-      name: "Dolce Amore",
-      desc: "Lorem Ipsum is lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    },
-    {
-      id: 3,
-      image: require("../../assets/testimage2.png"),
-      name: "Dolce Amore",
-      desc: "Lorem Ipsum is lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    },
-    {
-      id: 4,
-      image: require("../../assets/testimage2.png"),
-      name: "Dolce Amore",
-      desc: "Lorem Ipsum is lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    },
-    {
-      id: 5,
-      image: require("../../assets/testimage2.png"),
-      name: "Dolce Amore",
-      desc: "Lorem Ipsum is lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    },
-    {
-      id: 6,
-      image: require("../../assets/testimage2.png"),
-      name: "Dolce Amore",
-      desc: "Lorem Ipsum is lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    },
-  ];
+  const { navigate } = navigation;
+  // Local State
+  const [roomData, setRoomData] = useState<userListDetailsType[] | undefined>([]);
+
+  const getRoomDataAction = async () => {
+    const { status, data } = await routesGetApiAuth("/room/chatRoom");
+    console.log("room data", data)
+    if (status === 200) return setRoomData(data);
+  };
+
+  useEffect(() => {
+    getRoomDataAction();
+  }, []);
+
 
   const searchHeader = () => {
     const propsContainer = {
@@ -68,25 +66,27 @@ const Home = ({ navigation }: NavigationParams) => {
   };
 
   const body = () => {
+ 
     const messagesListDisplay = () => {
-      const messageList = (props: any) => {
-        const { item } = props;
+      const messageList = (item: userListDetailsType, index: number) => {
+        const { roomDetails } = item;
         return (
-          <View
+          <TouchableOpacity
             style={{
               flexDirection: "row",
               alignItems: "center",
-              marginVertical: height * 0.01,
+              marginVertical: height * 0.013,
             }}
-            key={item.id}
+            key={index}
+            onPress={() => navigate("chat", { ...item })}
           >
             <Image
               style={{
-                height: height * 0.075,
-                width: width * 0.15,
+                height: height * 0.071,
+                width: width * 0.14,
                 borderRadius: 100,
               }}
-              source={item.image}
+              source={require("../../assets/testimage2.png")}
             />
             <View
               style={{
@@ -104,7 +104,7 @@ const Home = ({ navigation }: NavigationParams) => {
                     color: "#050505",
                   }}
                 >
-                  {item.name}
+                  {roomDetails[0]?.roomName}
                 </Text>
                 <Text
                   numberOfLines={1}
@@ -115,9 +115,7 @@ const Home = ({ navigation }: NavigationParams) => {
                     fontSize: height * 0.015,
                     color: "#050505",
                   }}
-                >
-                  {item.desc}
-                </Text>
+                ></Text>
               </View>
               <View style={{ flexDirection: "column", alignItems: "center" }}>
                 <Text>3:05 PM</Text>
@@ -137,12 +135,18 @@ const Home = ({ navigation }: NavigationParams) => {
                 </Text>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         );
       };
 
-      return <FlatList data={friends} renderItem={messageList} />;
+      return (
+        <FlatList
+          data={roomData}
+          renderItem={({ item, index }) => messageList(item, index)}
+        />
+      );
     };
+
     return (
       <>
         {searchHeader()}

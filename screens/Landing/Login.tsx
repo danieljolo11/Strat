@@ -16,6 +16,7 @@ import { routesPostApi } from "../../api/api_routes";
 import { tokenStore } from "../../zustand/logintoken";
 
 import Ionic from "react-native-vector-icons/Ionicons";
+import { saveToStorage } from "../../api/global_script";
 
 const { height, width } = Dimensions.get("window");
 
@@ -43,8 +44,8 @@ export default function Login({ navigation }: NavigationParams) {
     await routesPostApi("/user/login", params).then(async (response) => {
       if (response.status === 201) {
         const { token } = response.data;
-        storeTokenAction(token);
-        await AsyncStorage.setItem("token", token);
+        saveToStorage("token", token);
+        // await AsyncStorage.setItem("token", token);
         return navigation.navigate("home")
       } else {
         alert("Incorrect username or password");

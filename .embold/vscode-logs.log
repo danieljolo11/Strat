@@ -8,3 +8,24 @@
 2023-08-17 14:43:37 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
 2023-08-17 14:43:37 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
 2023-08-17 14:43:37 info: Congratulations, your extension "Embold" is now active!
+2023-08-25 10:35:17 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-08-25 10:35:17 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-08-25 10:35:17 info: Congratulations, your extension "Embold" is now active!
+2023-08-25 10:36:30 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.1071888305
+2023-08-25 10:36:30 error: SQLITE_ERROR: no such table: issues
+2023-08-25 11:03:06 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/screens/Components/Header/Header.tsx
+2023-08-25 11:03:06 error: SQLITE_ERROR: no such table: issues
+2023-08-25 11:46:47 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3818388256
+2023-08-25 11:46:47 error: SQLITE_ERROR: no such table: issues
+2023-08-25 11:46:48 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.2848245166
+2023-08-25 11:46:48 error: SQLITE_ERROR: no such table: issues
+2023-08-25 14:12:45 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3804773379
+2023-08-25 14:12:45 error: SQLITE_ERROR: no such table: issues
+2023-08-25 14:12:47 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.4285081907
+2023-08-25 14:12:47 error: SQLITE_ERROR: no such table: issues
+2023-08-25 14:58:52 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.2310870409
+2023-08-25 14:58:52 error: SQLITE_ERROR: no such table: issues
+2023-08-25 16:11:32 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.1347478927
+2023-08-25 16:11:32 error: SQLITE_ERROR: no such table: issues
+2023-08-25 16:11:32 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.4013103972
+2023-08-25 16:11:32 error: SQLITE_ERROR: no such table: issues
