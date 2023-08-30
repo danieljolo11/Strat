@@ -10,6 +10,7 @@ import LandingPage from "./screens/Landing/LandingPage";
 import Login from "./screens/Landing/Login";
 import Register from "./screens/Landing/Register";
 import Home from "./screens/Logged/Home";
+import { io } from "socket.io-client";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import SearchUser from "./screens/Logged/SearchUser/SearchUser";
@@ -17,6 +18,7 @@ import Chat from "./screens/Logged/Chat/Chat";
 import { NavigationContainer } from "@react-navigation/native";
 import { useEffect } from "react";
 import { getStorageValue } from "./api/global_script";
+import { socket } from "./screens/GlobalApi/Socket";
 
 interface loggedInComponent<T> {
   name: string;
@@ -104,7 +106,7 @@ const StackNavigator = () => {
       );
     };
 
-    return authorized ? <>{StackNavigation()}</> : null;
+    return <>{StackNavigation()}</>;
   };
 
   const isNotLoggedIn = (): any => {
@@ -166,7 +168,7 @@ const StackNavigator = () => {
 
   return (
     <React.Fragment>
-      {isNotLoggedIn()}
+      {/* {isNotLoggedIn()} */}
       {isLoggedIn()}
     </React.Fragment>
   );

@@ -10,6 +10,7 @@ import { RootSiblingParent } from "react-native-root-siblings";
 
 // components
 import StackNavigator from "./StackNavigator";
+import socket from "./screens/GlobalApi/Socket";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,6 +19,36 @@ export default function App() {
     Poppins600: require("./assets/Fonts/Poppins-SemiBold.otf"),
     Poppins700: require("./assets/Fonts/Poppins-Bold.otf"),
   });
+
+  useEffect(() => {
+    // socket.on("connect", () => {
+    //   const engine = socket.io.engine;
+    //   console.log(engine.transport.name); // in most cases, prints "polling"
+    
+    //   engine.once("upgrade", () => {
+    //     // called when the transport is upgraded (i.e. from HTTP long-polling to WebSocket)
+    //     console.log(engine.transport.name); // in most cases, prints "websocket"
+    //   });
+    
+    //   engine.on("packet", ({ type, data }) => {
+    //     console.log(`packet data:`, "data:", data, "type:", type)
+    //     // called for each packet received
+    //   });
+    
+    //   engine.on("packetCreate", ({ type, data }) => {
+    //     console.log(`packetCreate data:`, "data:", data, "type:", type)
+    //     // called for each packet sent
+    //   });
+    
+    //   engine.on("drain", () => {
+    //     // called when the write buffer is drained
+    //   });
+    
+    //   engine.on("close", (reason) => {
+    //     // called when the underlying connection is closed
+    //   });
+    // });
+  }, []);
 
   useEffect(() => {
     async function prepare() {

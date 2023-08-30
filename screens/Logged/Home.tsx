@@ -7,7 +7,8 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
+import { useFocusEffect } from "@react-navigation/native";
+import React, { useCallback, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionic from "react-native-vector-icons/Ionicons";
 import Header from "../Components/Header/Header";
@@ -16,6 +17,7 @@ import { routesGetApiAuth, ResponseType } from "../../api/api_routes";
 import { useEffect } from "react";
 import { AxiosResponse } from "axios";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import socket from "../GlobalApi/Socket";
 
 const { height, width } = Dimensions.get("window");
 
@@ -43,19 +45,28 @@ interface userListDetailsType {
 
 const Home = ({ navigation }: NavigationParams) => {
   const { navigate } = navigation;
+
   // Local State
-  const [roomData, setRoomData] = useState<userListDetailsType[] | undefined>([]);
+  const [roomData, setRoomData] = useState<userListDetailsType[] | undefined>(
+    []
+  );
 
   const getRoomDataAction = async () => {
     const { status, data } = await routesGetApiAuth("/room/chatRoom");
-    console.log("room data", data)
     if (status === 200) return setRoomData(data);
   };
 
   useEffect(() => {
-    getRoomDataAction();
+    socket.on("connect", (socket: any) => {
+      console.log("connected", socket.id);
+    });
   }, []);
 
+  useFocusEffect(
+    useCallback(() => {
+      getRoomDataAction();
+    }, [])
+  );
 
   const searchHeader = () => {
     const propsContainer = {
@@ -66,7 +77,6 @@ const Home = ({ navigation }: NavigationParams) => {
   };
 
   const body = () => {
- 
     const messagesListDisplay = () => {
       const messageList = (item: userListDetailsType, index: number) => {
         const { roomDetails } = item;
@@ -83,7 +93,7 @@ const Home = ({ navigation }: NavigationParams) => {
             <Image
               style={{
                 height: height * 0.071,
-                width: width * 0.14,
+                width: width * 0.15,
                 borderRadius: 100,
               }}
               source={require("../../assets/testimage2.png")}
@@ -99,8 +109,8 @@ const Home = ({ navigation }: NavigationParams) => {
               <View style={{ flexDirection: "column" }}>
                 <Text
                   style={{
-                    fontFamily: "Poppins500",
-                    fontSize: height * 0.019,
+                    fontFamily: "Poppins600",
+                    fontSize: height * 0.018,
                     color: "#050505",
                   }}
                 >
@@ -123,7 +133,7 @@ const Home = ({ navigation }: NavigationParams) => {
                   style={{
                     fontFamily: "Poppins",
                     fontSize: height * 0.0125,
-                    borderRadius: 100,
+                    borderRadius: 30,
                     backgroundColor: "#050505",
                     paddingHorizontal: width * 0.02,
                     paddingVertical: height * 0.001,

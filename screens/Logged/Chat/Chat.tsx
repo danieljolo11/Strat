@@ -20,6 +20,7 @@ import {
 import { routesGetApiAuth, routesPostApiAuth } from "../../../api/api_routes";
 import { AxiosResponse } from "axios";
 import { useEffect } from "react";
+import socket from "../../GlobalApi/Socket";
 
 const { height, width } = Dimensions.get("window");
 
@@ -38,12 +39,18 @@ const Chat: FC<Props> = ({ route, navigation }) => {
   const { params } = route;
   const { _id, roomDetails } = params as any;
   const { roomId } = _id || {};
-  // console.log(`params:`, params)
 
   const [writtenMessage, setWrittenMessage] = useState<string>("");
   const [messageList, setMessageList] = useState<any[]>([]);
 
   useEffect(() => {
+    socket.on("message", () => {
+      getMessageRoomMessagesAction();
+    });
+  }, [socket]);
+
+  useEffect(() => {
+    socket.emit("join-room", roomId);
     getMessageRoomMessagesAction();
   }, []);
 
@@ -70,7 +77,8 @@ const Chat: FC<Props> = ({ route, navigation }) => {
         const { status } = res || {};
         if (status === 201) {
           setWrittenMessage("");
-          return getMessageRoomMessagesAction()
+          getMessageRoomMessagesAction();
+          return socket.emit("send-message", roomId);
         }
       })
       .catch((err) => {
@@ -113,13 +121,11 @@ const Chat: FC<Props> = ({ route, navigation }) => {
       const chatMessageDisplay = (item: any, index: any) => {
         const { messageDescription, userDetails } = item || {};
         const { _id, email } = userDetails || {};
-        console.log(`userDetails:`, userDetails)
 
         return (
           <View
             style={[
               {
-
                 alignItems: "flex-start",
                 paddingVertical: h("1%"),
               },
@@ -128,10 +134,11 @@ const Chat: FC<Props> = ({ route, navigation }) => {
             <Text
               style={{
                 borderRadius: 20,
+                overflow: "hidden",
                 paddingVertical: h("2%"),
                 paddingHorizontal: w("3%"),
                 backgroundColor: _id === roomId ? "#F3F4F6" : "#050505",
-                color: _id === roomId ? "#6B7280" : "#FFF"  ,
+                color: _id === roomId ? "#6B7280" : "#FFF",
               }}
             >
               {messageDescription ?? null}
@@ -142,6 +149,7 @@ const Chat: FC<Props> = ({ route, navigation }) => {
 
       return (
         <FlatList
+        progressViewOffset={0}
           inverted={false}
           data={messageList}
           renderItem={({ item, index }) => chatMessageDisplay(item, index)}

@@ -62,11 +62,14 @@ const SearchUser: FC = () => {
       roomName: roomName,
       participants: participants,
     };
-    
+
     await routesPostApiAuth(path, params)
-      .then((res: AxiosResponse<any, any> | { data: {}; status: any }) =>
-        console.log("res", res)
-      )
+      .then((res: AxiosResponse<any, any> | { data: {}; status: any }) => {
+        if (res.status == 201) {
+          closeModal();
+          alert("Room Created")
+        }
+      })
       .catch((err) => console.log("err", err));
   };
 
