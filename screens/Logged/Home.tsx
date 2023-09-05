@@ -52,15 +52,13 @@ const Home = ({ navigation }: NavigationParams) => {
   );
 
   const getRoomDataAction = async () => {
-    const { status, data } = await routesGetApiAuth("/room/chatRoom");
-    if (status === 200) return setRoomData(data);
+    await routesGetApiAuth("/room/chatRoom").then((res) => {
+      const { data, status } = res || {};
+      if (status === 200) return setRoomData(data);
+    }).catch((err) => {
+      console.log(`err:`, err)
+    })
   };
-
-  useEffect(() => {
-    socket.on("connect", (socket: any) => {
-      console.log("connected", socket.id);
-    });
-  }, []);
 
   useFocusEffect(
     useCallback(() => {

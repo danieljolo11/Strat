@@ -1,7 +1,6 @@
 import * as SecureStore from "expo-secure-store";
 
 export async function saveToStorage(key: string, value: string): Promise<void> {
-
   SecureStore.setItemAsync(key, value);
 }
 

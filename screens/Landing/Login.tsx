@@ -17,6 +17,7 @@ import { tokenStore } from "../../zustand/logintoken";
 
 import Ionic from "react-native-vector-icons/Ionicons";
 import { saveToStorage } from "../../api/global_script";
+import authorization from "../../services/auth_service";
 
 const { height, width } = Dimensions.get("window");
 
@@ -28,6 +29,9 @@ interface LoginFormInterface {
 export default function Login({ navigation }: NavigationParams) {
   // zustand
   const { storeTokenAction } = tokenStore((state) => state, shallow);
+  const { setToken, setUserData } = authorization();
+
+  
 
   // local state
   const [formValues, setFormValues] = useState<LoginFormInterface>({
@@ -44,9 +48,11 @@ export default function Login({ navigation }: NavigationParams) {
     await routesPostApi("/user/login", params).then(async (response) => {
       if (response.status === 201) {
         const { token } = response.data;
-        saveToStorage("token", token);
-        // await AsyncStorage.setItem("token", token);
-        return navigation.navigate("home")
+        console.log(`response.data:`, response.data)
+        setUserData(response?.data[0])
+        setToken(token);
+        saveToStorage("userToken", token)
+        return navigation.navigate("Home")
       } else {
         alert("Incorrect username or password");
       }

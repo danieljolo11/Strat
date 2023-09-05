@@ -21,6 +21,7 @@ import { routesGetApiAuth, routesPostApiAuth } from "../../../api/api_routes";
 import { AxiosResponse } from "axios";
 import { useEffect } from "react";
 import socket from "../../GlobalApi/Socket";
+import authorization from "../../../services/auth_service";
 
 const { height, width } = Dimensions.get("window");
 
@@ -36,6 +37,7 @@ interface Props extends NativeStackScreenProps<any, "chat"> {
 }
 
 const Chat: FC<Props> = ({ route, navigation }) => {
+  const { userData } = authorization();
   const { params } = route;
   const { _id, roomDetails } = params as any;
   const { roomId } = _id || {};
@@ -103,7 +105,7 @@ const Chat: FC<Props> = ({ route, navigation }) => {
         <View>
           <Text
             style={{
-              fontSize: h("3%"),
+              fontSize: h("2.5%"),
               fontFamily: "Poppins600",
               paddingTop: h(".7%"),
               paddingHorizontal: w("1%"),
@@ -120,13 +122,18 @@ const Chat: FC<Props> = ({ route, navigation }) => {
     const chatListView = () => {
       const chatMessageDisplay = (item: any, index: any) => {
         const { messageDescription, userDetails } = item || {};
-        const { _id, email } = userDetails || {};
+        // console.log(`item:`, item)
+        const { email: userEmail } = userData || {};
+        // console.log(`userEmail:`, userEmail)
+        const { name, email } = userDetails[0] || {};
+        console.log(`userDetails[0]:`, userDetails[0])
+        // console.log(`email:`, email)
 
         return (
           <View
             style={[
               {
-                alignItems: "flex-start",
+                alignItems: email === userEmail ? "flex-end" : "flex-start",
                 paddingVertical: h("1%"),
               },
             ]}
@@ -137,20 +144,21 @@ const Chat: FC<Props> = ({ route, navigation }) => {
                 overflow: "hidden",
                 paddingVertical: h("2%"),
                 paddingHorizontal: w("3%"),
-                backgroundColor: _id === roomId ? "#F3F4F6" : "#050505",
-                color: _id === roomId ? "#6B7280" : "#FFF",
+                backgroundColor: email === userEmail ? "#F3F4F6" : "#050505",
+                color: email === userEmail ? "#050505" : "#FFF",
               }}
             >
               {messageDescription ?? null}
             </Text>
+            <Text>{name ?? null}</Text>
           </View>
         );
       };
 
       return (
         <FlatList
-        progressViewOffset={0}
-          inverted={false}
+          progressViewOffset={0}
+          inverted={true}
           data={messageList}
           renderItem={({ item, index }) => chatMessageDisplay(item, index)}
         />

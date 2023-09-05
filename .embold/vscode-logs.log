@@ -959,3 +959,48 @@
 2023-08-30 16:06:02 error: SQLITE_ERROR: no such table: issues
 2023-08-30 16:06:03 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.2249174213
 2023-08-30 16:06:03 error: SQLITE_ERROR: no such table: issues
+2023-08-30 16:07:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.git/index.lock
+2023-08-30 16:07:25 error: SQLITE_ERROR: no such table: issues
+2023-08-30 16:07:33 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.git/index.lock
+2023-08-30 16:07:33 error: SQLITE_ERROR: no such table: issues
+2023-08-30 16:07:38 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.git/index.lock
+2023-08-30 16:07:38 error: SQLITE_ERROR: no such table: issues
+2023-08-31 08:56:17 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-08-31 08:56:17 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-08-31 08:56:17 info: Congratulations, your extension "Embold" is now active!
+2023-08-31 08:57:07 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.2901113265
+2023-08-31 08:57:07 error: SQLITE_ERROR: no such table: issues
+2023-08-31 08:57:09 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3597434290
+2023-08-31 08:57:09 error: SQLITE_ERROR: no such table: issues
+2023-08-31 09:15:42 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/services/auth_service.js
+2023-08-31 09:15:42 error: SQLITE_ERROR: no such table: issues
+2023-09-01 14:31:34 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-01 14:31:34 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-01 14:31:34 info: Congratulations, your extension "Embold" is now active!
+2023-09-01 14:31:39 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.80728681
+2023-09-01 14:31:40 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.1775078410
+2023-09-01 14:31:40 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.610320350
+2023-09-01 14:31:44 error: SQLITE_ERROR: no such table: issues
+2023-09-01 14:31:44 error: SQLITE_ERROR: no such table: issues
+2023-09-01 14:31:44 error: SQLITE_ERROR: no such table: issues
+2023-09-01 15:39:25 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-01 15:39:25 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-01 15:39:25 info: Congratulations, your extension "Embold" is now active!
+2023-09-01 15:41:43 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.2493977242
+2023-09-01 15:41:43 error: SQLITE_ERROR: no such table: issues
+2023-09-01 15:41:44 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3832572534
+2023-09-01 15:41:44 error: SQLITE_ERROR: no such table: issues
+2023-09-01 15:54:31 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.4269024852
+2023-09-01 15:54:31 error: SQLITE_ERROR: no such table: issues
+2023-09-01 15:54:33 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.419688833
+2023-09-01 15:54:33 error: SQLITE_ERROR: no such table: issues
+2023-09-04 08:22:19 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-04 08:22:19 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-04 08:22:19 info: Congratulations, your extension "Embold" is now active!
+2023-09-05 13:46:53 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-05 13:46:53 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-05 13:46:53 info: Congratulations, your extension "Embold" is now active!
+2023-09-05 13:46:53 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.3599613260
+2023-09-05 13:46:53 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.2434432698
+2023-09-05 13:46:58 error: SQLITE_ERROR: no such table: issues
+2023-09-05 13:46:58 error: SQLITE_ERROR: no such table: issues

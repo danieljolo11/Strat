@@ -31,7 +31,12 @@ const Header: FC<headerContainer> = (props) => {
         alignItems: "center",
       }}
     >
-      <View>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
         <View>
           <Ionic
             size={height * 0.04}

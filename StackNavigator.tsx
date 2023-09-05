@@ -19,6 +19,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useEffect } from "react";
 import { getStorageValue } from "./api/global_script";
 import { socket } from "./screens/GlobalApi/Socket";
+import authorization from "./services/auth_service";
 
 interface loggedInComponent<T> {
   name: string;
@@ -31,18 +32,13 @@ interface loggedInComponent<T> {
 const StackNavigator = () => {
   const Stack = createStackNavigator<RootStackParamList>();
   const Tab = createBottomTabNavigator();
+  const { token } = authorization();
+
+  useEffect(() => {
+    setAuthorized(!!token)
+  }, [token])
 
   const [authorized, setAuthorized] = useState<boolean>();
-
-  useEffect(async () => {
-    const authorized = await getToken();
-    setAuthorized(!!authorized);
-  }, []);
-
-  const getToken = async (): Promise<any> => {
-    const token = await getStorageValue("token");
-    return token;
-  };
 
   const isLoggedIn = () => {
     const TabNavigation = () => {
@@ -88,6 +84,11 @@ const StackNavigator = () => {
           component: Chat,
           option: { headerShown: false },
         },
+        {
+          name: "profile",
+          component: Profile,
+          option: { headerShown: false },
+        },
       ];
 
       return (
@@ -106,10 +107,10 @@ const StackNavigator = () => {
       );
     };
 
-    return <>{StackNavigation()}</>;
+    return authorized ? <>{StackNavigation()}</> : null
   };
 
-  const isNotLoggedIn = (): any => {
+  const isNotLoggedIn = () => {
     // for translate animation screen to screen
     const forTranslate = ({ current, next, layouts }: TranslateInterface) => ({
       cardStyle: {
@@ -168,7 +169,7 @@ const StackNavigator = () => {
 
   return (
     <React.Fragment>
-      {/* {isNotLoggedIn()} */}
+      {isNotLoggedIn()}
       {isLoggedIn()}
     </React.Fragment>
   );
