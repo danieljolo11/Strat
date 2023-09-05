@@ -34,9 +34,15 @@ const StackNavigator = () => {
   const Tab = createBottomTabNavigator();
   const { token } = authorization();
 
+  const checkIfTokenExist = async () => {
+    const token = await getStorageValue("userToken");
+    console.log(`token:`, token)
+    return token && setAuthorized(!!token);
+  };
+
   useEffect(() => {
-    setAuthorized(!!token)
-  }, [token])
+    checkIfTokenExist();
+  }, []);
 
   const [authorized, setAuthorized] = useState<boolean>();
 
@@ -84,11 +90,11 @@ const StackNavigator = () => {
           component: Chat,
           option: { headerShown: false },
         },
-        {
-          name: "profile",
-          component: Profile,
-          option: { headerShown: false },
-        },
+        // {
+        //   name: "profile",
+        //   component: Profile,
+        //   option: { headerShown: false },
+        // },
       ];
 
       return (
@@ -107,7 +113,7 @@ const StackNavigator = () => {
       );
     };
 
-    return authorized ? <>{StackNavigation()}</> : null
+    return <>{StackNavigation()}</>;
   };
 
   const isNotLoggedIn = () => {
@@ -151,7 +157,7 @@ const StackNavigator = () => {
       },
     ];
 
-    return !authorized ? (
+    return (
       <React.Fragment>
         <Stack.Navigator initialRouteName="landingpage">
           {screens.map(({ name, component, option }: IsNotLoginInterface) => (
@@ -164,13 +170,13 @@ const StackNavigator = () => {
           ))}
         </Stack.Navigator>
       </React.Fragment>
-    ) : null;
+    );
   };
 
   return (
     <React.Fragment>
-      {isNotLoggedIn()}
-      {isLoggedIn()}
+      {!authorized && isNotLoggedIn()}
+      {authorized && isLoggedIn()}
     </React.Fragment>
   );
 };

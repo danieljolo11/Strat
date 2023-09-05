@@ -1004,3 +1004,9 @@
 2023-09-05 13:46:53 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.2434432698
 2023-09-05 13:46:58 error: SQLITE_ERROR: no such table: issues
 2023-09-05 13:46:58 error: SQLITE_ERROR: no such table: issues
+2023-09-05 14:13:22 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.2482392696
+2023-09-05 14:13:22 error: SQLITE_ERROR: no such table: issues
+2023-09-05 14:13:26 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.git/index.lock
+2023-09-05 14:13:26 error: SQLITE_ERROR: no such table: issues
+2023-09-05 14:13:31 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.git/index.lock
+2023-09-05 14:13:31 error: SQLITE_ERROR: no such table: issues

@@ -13,11 +13,12 @@ interface headerContainer {
   title: string;
 }
 const Header: FC<headerContainer> = (props) => {
-  const { title } = props;
+  const { title, navigate } = props;
 
   const logoutAction = async (): Promise<void> => {
     try {
-      return await SecureStore.deleteItemAsync("token", {});
+      await SecureStore.deleteItemAsync("userToken", {});
+      return navigate("landingpage")
     } catch (e) {
       return console.log("AsyncStorage Error", e);
     }

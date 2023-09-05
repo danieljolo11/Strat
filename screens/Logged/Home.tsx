@@ -23,6 +23,7 @@ const { height, width } = Dimensions.get("window");
 
 interface headerContainer {
   title: string;
+  navigate: any;
 }
 
 interface userDetails {
@@ -69,6 +70,7 @@ const Home = ({ navigation }: NavigationParams) => {
   const searchHeader = () => {
     const propsContainer = {
       title: "Messages",
+      navigate,
     } as headerContainer;
 
     return <Header {...propsContainer} />;

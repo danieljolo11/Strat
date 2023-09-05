@@ -11,7 +11,8 @@ import { RootSiblingParent } from "react-native-root-siblings";
 // components
 import StackNavigator from "./StackNavigator";
 import socket from "./screens/GlobalApi/Socket";
-import { AuthServiceProvider } from "./services/auth_service";
+import authorization, { AuthServiceProvider } from "./services/auth_service";
+import { getStorageValue } from "./api/global_script";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,9 +22,16 @@ export default function App() {
     Poppins700: require("./assets/Fonts/Poppins-Bold.otf"),
   });
 
-  useEffect(() => {
+  // const checkIfTokenExist = async () => {
+  //   const token = await getStorageValue("userToken");
+  //   console.log(`checkIfTokenExist token:`, token)
+  //   const { setToken } = authorization();
+  //   return token && setToken(token);
+  // }
 
-  }, []);
+  // useEffect(() => {
+  //   checkIfTokenExist();
+  // }, []);
 
   useEffect(() => {
     async function prepare() {
