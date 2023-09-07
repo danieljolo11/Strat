@@ -12,7 +12,7 @@ import Register from "./screens/Landing/Register";
 import Home from "./screens/Logged/Home";
 import { io } from "socket.io-client";
 
-import Ionicons from "react-native-vector-icons/Ionicons";
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import SearchUser from "./screens/Logged/SearchUser/SearchUser";
 import Chat from "./screens/Logged/Chat/Chat";
 import { NavigationContainer } from "@react-navigation/native";
@@ -20,6 +20,7 @@ import { useEffect } from "react";
 import { getStorageValue } from "./api/global_script";
 import { socket } from "./screens/GlobalApi/Socket";
 import authorization from "./services/auth_service";
+import Profile from "./screens/Logged/Profile/Profile";
 
 interface loggedInComponent<T> {
   name: string;
@@ -36,7 +37,6 @@ const StackNavigator = () => {
 
   const checkIfTokenExist = async () => {
     const token = await getStorageValue("userToken");
-    console.log(`token:`, token)
     return token && setAuthorized(!!token);
   };
 
@@ -54,13 +54,22 @@ const StackNavigator = () => {
           component: Home,
           option: {
             tabBarIcon: () => {
-              return <Ionicons size={5} name="home" color="#050505" />;
+              return <Ionicons name="ios-information-circle" size={30} color="#900" />;
             },
           },
         },
         {
           name: "Search",
           component: SearchUser,
+          option: {
+            tabBarIcon: () => {
+              return <Ionicons size={5} name="search" />;
+            },
+          },
+        },
+        {
+          name: "Profile",
+          component: Profile,
           option: {
             tabBarIcon: () => {
               return <Ionicons size={5} name="search" />;
@@ -90,11 +99,6 @@ const StackNavigator = () => {
           component: Chat,
           option: { headerShown: false },
         },
-        // {
-        //   name: "profile",
-        //   component: Profile,
-        //   option: { headerShown: false },
-        // },
       ];
 
       return (

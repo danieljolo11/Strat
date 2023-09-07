@@ -2,7 +2,9 @@ import React, { FC, useState } from "react";
 import {
   Dimensions,
   FlatList,
+  KeyboardAvoidingView,
   ListRenderItemInfo,
+  Platform,
   StyleSheet,
   Text,
   TextInput,
@@ -22,6 +24,7 @@ import { AxiosResponse } from "axios";
 import { useEffect } from "react";
 import socket from "../../GlobalApi/Socket";
 import authorization from "../../../services/auth_service";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const { height, width } = Dimensions.get("window");
 
@@ -90,29 +93,37 @@ const Chat: FC<Props> = ({ route, navigation }) => {
 
   const headerDisplay = () => {
     return (
-      <View
-        style={{
-          flex: 1,
-          // flexGrow: 1,
-          flexBasis: "10%",
-          flexDirection: "row",
-          alignItems: "center",
-        }}
-      >
-        <View>
-          <Ionic size={height * 0.04} name="chatbubbles" color="#050505" />
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <View style={{ width: w("10%") }}>
+          <Ionic
+            size={height * 0.03}
+            name="chevron-back"
+            color="#050505"
+            onPress={() => navigation.navigate("home")}
+          />
         </View>
-        <View>
-          <Text
-            style={{
-              fontSize: h("2.5%"),
-              fontFamily: "Poppins600",
-              paddingTop: h(".7%"),
-              paddingHorizontal: w("1%"),
-            }}
-          >
-            {roomDetails[0].roomName ?? "New"} Room
-          </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <View>
+            <Ionic size={height * 0.04} name="chatbubbles" color="#050505" />
+          </View>
+          <View>
+            <Text
+              style={{
+                fontSize: h("2.5%"),
+                fontFamily: "Poppins600",
+                paddingTop: h(".7%"),
+                paddingHorizontal: w("1%"),
+              }}
+            >
+              {roomDetails[0].roomName ?? "New"} Room
+            </Text>
+          </View>
         </View>
       </View>
     );
@@ -122,12 +133,8 @@ const Chat: FC<Props> = ({ route, navigation }) => {
     const chatListView = () => {
       const chatMessageDisplay = (item: any, index: any) => {
         const { messageDescription, userDetails } = item || {};
-        // console.log(`item:`, item)
         const { email: userEmail } = userData || {};
-        // console.log(`userEmail:`, userEmail)
         const { name, email } = userDetails[0] || {};
-        console.log(`userDetails[0]:`, userDetails[0])
-        // console.log(`email:`, email)
 
         return (
           <View
@@ -162,27 +169,10 @@ const Chat: FC<Props> = ({ route, navigation }) => {
           data={messageList}
           renderItem={({ item, index }) => chatMessageDisplay(item, index)}
         />
-        // <FlatList
-        //   inverted={true}
-        //   data={messageList}
-        //   renderItem={({ item, index }) => chatMessageDisplay(item, index)}
-        // />
       );
     };
-    return (
-      <View
-        style={{
-          flex: 1,
-          // flexGrow: 1,
-          flexBasis: "80%",
-          //   height: height * 0.84,
-          // justifyContent: "center",
-          // alignItems: "center",
-        }}
-      >
-        {chatListView()}
-      </View>
-    );
+
+    return <View style={{ flex: 1 }}>{chatListView()}</View>;
   };
 
   const footerDisplay = () => {
@@ -215,17 +205,49 @@ const Chat: FC<Props> = ({ route, navigation }) => {
     );
   };
 
-  const chatBody = () => {
-    return (
-      <View>
-        {headerDisplay()}
+  {
+    /* {headerDisplay()}
         {bodyDisplay()}
-        {footerDisplay()}
-      </View>
+        {footerDisplay()} */
+  }
+
+  const chatBody = () => {
+    const headerHeight = 5;
+    const keyboardVerticalOffset = Platform.OS === "ios" ? headerHeight : 0;
+    const behavior = Platform.OS === "ios" ? "padding" : "height";
+
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: "#FFF" }}>
+        <KeyboardAvoidingView
+          keyboardVerticalOffset={keyboardVerticalOffset}
+          behavior={behavior}
+          style={{
+            flex: 1,
+          }}
+        >
+          <View
+            style={{ flexBasis: 50, flexGrow: 0, paddingHorizontal: w("3%") }}
+          >
+            {headerDisplay()}
+          </View>
+          <View style={{ flexGrow: 1, paddingHorizontal: w("3%") }}>
+            {bodyDisplay()}
+          </View>
+          <View
+            style={{
+              padding: h("1%"),
+              flexBasis: 80,
+              flexGrow: 0,
+            }}
+          >
+            {footerDisplay()}
+          </View>
+        </KeyboardAvoidingView>
+      </SafeAreaView>
     );
   };
 
-  return <Container display={chatBody} />;
+  return chatBody();
 };
 
 export default Chat;

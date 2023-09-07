@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { Text, View } from "react-native";
+import Container from "../../Components/Container/Container";
 
 const Profile = () => {
-  return (
-    <div>Profile</div>
-  )
-}
+  const profileBody = () => {
+    return (
+      <View>
+        <Text>Profile</Text>
+      </View>
+    );
+  };
 
-export default Profile
+  return <Container display={profileBody} />;
+};
+
+export default Profile;
