@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import {
   Dimensions,
   FlatList,
+  Image,
   KeyboardAvoidingView,
   ListRenderItemInfo,
   Platform,
@@ -25,6 +26,7 @@ import { useEffect } from "react";
 import socket from "../../GlobalApi/Socket";
 import authorization from "../../../services/auth_service";
 import { SafeAreaView } from "react-native-safe-area-context";
+import moment from "moment";
 
 const { height, width } = Dimensions.get("window");
 
@@ -40,26 +42,49 @@ interface Props extends NativeStackScreenProps<any, "chat"> {
 }
 
 const Chat: FC<Props> = ({ route, navigation }) => {
-  const { userData } = authorization();
-  const { params } = route;
-  const { _id, roomDetails } = params as any;
+  const { userData } = authorization() as any;
+  const { _id, roomDetails } = route?.params as any;
   const { roomId } = _id || {};
 
   const [writtenMessage, setWrittenMessage] = useState<string>("");
   const [messageList, setMessageList] = useState<any[]>([]);
+  const [typingVisible, setTypingVisible] = useState<boolean>(false);
 
-  useEffect(() => {
+  const socketReceiveAction = () => {
     socket.on("message", () => {
       getMessageRoomMessagesAction();
     });
+    socket.on("typing-event", (item: any) => {
+      if (!typingVisible) {
+        const { email } = userData || {};
+        if (email !== item) setTypingVisible(true);
+
+        setTimeout(() => {
+          setTypingVisible(false);
+        }, 3000);
+      }
+    });
+  };
+
+  useEffect(() => {
+    socketReceiveAction();
   }, [socket]);
 
   useEffect(() => {
-    socket.emit("join-room", roomId);
     getMessageRoomMessagesAction();
   }, []);
 
+  // const typingActionListener =
+
+  const onHandleMessageAction = (value: string) => {
+    const { email } = userData || {};
+    socket.emit("typing-action-room", { roomId, email });
+    return setWrittenMessage(value);
+  };
+
   const getMessageRoomMessagesAction = async () => {
+    socket.emit("join-room", roomId);
+
     await routesGetApiAuth(`/message/${roomId}`)
       .then((res) => {
         const { status, data } = res || {};
@@ -83,6 +108,7 @@ const Chat: FC<Props> = ({ route, navigation }) => {
         if (status === 201) {
           setWrittenMessage("");
           getMessageRoomMessagesAction();
+          setTypingVisible(false);
           return socket.emit("send-message", roomId);
         }
       })
@@ -132,7 +158,7 @@ const Chat: FC<Props> = ({ route, navigation }) => {
   const bodyDisplay = () => {
     const chatListView = () => {
       const chatMessageDisplay = (item: any, index: any) => {
-        const { messageDescription, userDetails } = item || {};
+        const { messageDescription, userDetails, createdAt } = item || {};
         const { email: userEmail } = userData || {};
         const { name, email } = userDetails[0] || {};
 
@@ -147,28 +173,38 @@ const Chat: FC<Props> = ({ route, navigation }) => {
           >
             <Text
               style={{
-                borderRadius: 20,
+                borderRadius: 23,
                 overflow: "hidden",
-                paddingVertical: h("2%"),
-                paddingHorizontal: w("3%"),
+                paddingVertical: h("1.5%"),
+                paddingHorizontal: w("5%"),
                 backgroundColor: email === userEmail ? "#F3F4F6" : "#050505",
                 color: email === userEmail ? "#050505" : "#FFF",
+                fontWeight: 500,
               }}
             >
               {messageDescription ?? null}
             </Text>
-            <Text>{name ?? null}</Text>
+            <Text
+              style={{
+                fontSize: h("1.2%"),
+                paddingVertical: h(".5%"),
+                paddingHorizontal: w("2%"),
+              }}
+            >
+              {createdAt ? moment(createdAt).format("LT") : null}
+            </Text>
           </View>
         );
       };
 
       return (
-        <FlatList
-          progressViewOffset={0}
-          inverted={true}
-          data={messageList}
-          renderItem={({ item, index }) => chatMessageDisplay(item, index)}
-        />
+        <View>
+          <FlatList
+            inverted={true}
+            data={messageList}
+            renderItem={({ item, index }) => chatMessageDisplay(item, index)}
+          />
+        </View>
       );
     };
 
@@ -193,7 +229,7 @@ const Chat: FC<Props> = ({ route, navigation }) => {
           <TextInput
             style={styles.input}
             placeholder={"Send Message"}
-            onChangeText={(value) => setWrittenMessage(value)}
+            onChangeText={onHandleMessageAction}
             value={writtenMessage}
           />
         </View>
@@ -205,11 +241,29 @@ const Chat: FC<Props> = ({ route, navigation }) => {
     );
   };
 
-  {
-    /* {headerDisplay()}
-        {bodyDisplay()}
-        {footerDisplay()} */
-  }
+  const typingActionDisplay = () => {
+    return typingVisible ? (
+      <View
+        style={{
+          padding: h("1%"),
+          flexBasis: 75,
+          flexGrow: 0,
+        }}
+      >
+        <Image
+          style={{
+            resizeMode: "contain",
+            width: w("30%"),
+            height: h("6%"),
+            borderRadius: 20,
+          }}
+          source={{
+            uri: "https://media.tenor.com/VinSlhZc6jIAAAAC/meme-typing.gif",
+          }}
+        />
+      </View>
+    ) : null;
+  };
 
   const chatBody = () => {
     const headerHeight = 5;
@@ -233,6 +287,9 @@ const Chat: FC<Props> = ({ route, navigation }) => {
           <View style={{ flexGrow: 1, paddingHorizontal: w("3%") }}>
             {bodyDisplay()}
           </View>
+
+          {typingActionDisplay()}
+
           <View
             style={{
               padding: h("1%"),

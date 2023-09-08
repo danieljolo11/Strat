@@ -12,7 +12,7 @@ import Register from "./screens/Landing/Register";
 import Home from "./screens/Logged/Home";
 import { io } from "socket.io-client";
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Ionicons from "react-native-vector-icons/Ionicons";
 import SearchUser from "./screens/Logged/SearchUser/SearchUser";
 import Chat from "./screens/Logged/Chat/Chat";
 import { NavigationContainer } from "@react-navigation/native";
@@ -21,6 +21,7 @@ import { getStorageValue } from "./api/global_script";
 import { socket } from "./screens/GlobalApi/Socket";
 import authorization from "./services/auth_service";
 import Profile from "./screens/Logged/Profile/Profile";
+import { routesGetApiAuth } from "./api/api_routes";
 
 interface loggedInComponent<T> {
   name: string;
@@ -33,11 +34,17 @@ interface loggedInComponent<T> {
 const StackNavigator = () => {
   const Stack = createStackNavigator<RootStackParamList>();
   const Tab = createBottomTabNavigator();
-  const { token } = authorization();
+  const { token, setUserData } = authorization();
 
   const checkIfTokenExist = async () => {
     const token = await getStorageValue("userToken");
-    return token && setAuthorized(!!token);
+    if (token) {
+      const { data, status } = await routesGetApiAuth("/user/info");
+      if (status === 200) {
+        setUserData(data?.data);
+        return setAuthorized(!!token);
+      }
+    }
   };
 
   useEffect(() => {
@@ -54,7 +61,13 @@ const StackNavigator = () => {
           component: Home,
           option: {
             tabBarIcon: () => {
-              return <Ionicons name="ios-information-circle" size={30} color="#900" />;
+              return (
+                <Ionicons
+                  name="ios-information-circle"
+                  size={30}
+                  color="#900"
+                />
+              );
             },
           },
         },
