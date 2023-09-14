@@ -31,8 +31,6 @@ export default function Login({ navigation }: NavigationParams) {
   const { storeTokenAction } = tokenStore((state) => state, shallow);
   const { setToken, setUserData } = authorization();
 
-  
-
   // local state
   const [formValues, setFormValues] = useState<LoginFormInterface>({
     email: "",
@@ -48,7 +46,6 @@ export default function Login({ navigation }: NavigationParams) {
     await routesPostApi("/user/login", params).then(async (response) => {
       if (response.status === 201) {
         const { token } = response.data;
-        console.log(`response.data:`, response.data)
         setUserData(response?.data[0])
         setToken(token);
         saveToStorage("userToken", token)

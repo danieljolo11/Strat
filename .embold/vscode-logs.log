@@ -1019,3 +1019,418 @@
 2023-09-07 13:58:33 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
 2023-09-07 13:58:33 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
 2023-09-07 13:58:33 info: Congratulations, your extension "Embold" is now active!
+2023-09-08 14:42:48 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-08 14:42:48 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-08 14:42:48 info: Congratulations, your extension "Embold" is now active!
+2023-09-08 14:46:10 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.2135102139
+2023-09-08 14:46:10 error: SQLITE_ERROR: no such table: issues
+2023-09-08 14:46:11 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.4250154879
+2023-09-08 14:46:11 error: SQLITE_ERROR: no such table: issues
+2023-09-08 14:46:12 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3261946904
+2023-09-08 14:46:12 error: SQLITE_ERROR: no such table: issues
+2023-09-08 14:48:14 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.bin
+2023-09-08 14:48:14 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.package-lock.json
+2023-09-08 14:48:14 error: SQLITE_ERROR: no such table: issues
+2023-09-08 14:48:14 error: SQLITE_ERROR: no such table: issues
+2023-09-08 14:48:16 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/lottie-ios
+2023-09-08 14:48:16 error: SQLITE_ERROR: no such table: issues
+2023-09-08 14:51:29 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3743480933
+2023-09-08 14:51:29 error: SQLITE_ERROR: no such table: issues
+2023-09-11 15:47:56 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-11 15:47:56 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-11 15:47:56 info: Congratulations, your extension "Embold" is now active!
+2023-09-12 15:24:13 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-12 15:24:13 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-12 15:24:13 info: Congratulations, your extension "Embold" is now active!
+2023-09-12 15:24:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.2418935291
+2023-09-12 15:24:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 11:46:22 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-13 11:46:22 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-13 11:46:22 info: Congratulations, your extension "Embold" is now active!
+2023-09-13 11:47:33 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.2099962679
+2023-09-13 11:47:33 error: SQLITE_ERROR: no such table: issues
+2023-09-13 11:47:34 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3422935261
+2023-09-13 11:47:34 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:08:13 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.4127246421
+2023-09-13 14:08:13 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:38:15 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3753837170
+2023-09-13 14:38:15 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:12 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3409000472
+2023-09-13 14:39:12 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:14 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.3599468359
+2023-09-13 14:39:14 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:23 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/acorn
+2023-09-13 14:39:23 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/rc
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/ncp
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/atob
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/expo
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/mime
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/uuid
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/jsesc
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/json5
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/metro
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/which
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/mkdirp
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/nanoid
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/rimraf
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/semver
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/terser
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/xml-js
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/envinfo
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/esprima
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/js-yaml
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/resolve
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/sucrase
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/logkitty
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/md5-file
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/is-docker
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/uglify-es
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/image-size
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/typescript
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/jscodeshift
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/regjsparser
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/browserslist
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/loose-envify
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/react-native
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/fast-xml-parser
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/qrcode-terminal
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/metro-symbolicate
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/metro-inspector-proxy
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/update-browserslist-db
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/expo-modules-autolinking
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/react-native-vector-icons
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/ora
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/clone
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/onetime
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/p-limit
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/yallist
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/has-flag
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/jsonfile
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/mimic-fn
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/statuses
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/camelcase
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/lru-cache
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/cli-cursor
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/strip-ansi
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/is-arrayish
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/log-symbols
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/sudo-prompt
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/universalify
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/is-extendable
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/extend-shallow
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/restore-cursor
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/supports-color
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/escape-string-regexp
+2023-09-13 14:39:24 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/is-fullwidth-code-point
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:24 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/chalk
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/ws
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/promise
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/react-is
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/commander
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/form-data
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/type-fest
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/source-map
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/ob1
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/temp
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/y18n
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/cliui
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/pngjs
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/yargs
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/fs-extra
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/is-number
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/ansi-styles
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/ansi-escapes
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/yargs-parser
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/metro-runtime
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/readable-stream
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/metro-source-map
+2023-09-13 14:39:25 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/metro-react-native-babel-preset
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:25 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:26 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/define-property
+2023-09-13 14:39:26 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:54 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/fsevents
+2023-09-13 14:39:54 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.ora-0psyRX41
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.atob-Sh32heSt
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.mime-jyss8i0y
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.acorn-pDHCnl69
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.chalk-KBLsV0Nd
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.clone-9r5jL2Hx
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.jsesc-cELIOWy5
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.json5-1P4CRn9V
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.mkdirp-yL5FUREV
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.nanoid-1TyaaGJz
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.rimraf-kBho8bPp
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.envinfo-uBYE3M9t
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.esprima-cI1QiNaR
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.onetime-6vf53dxL
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.p-limit-T4NQQtmI
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.promise-m4sUVfdC
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.yallist-xe2ejYIt
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.has-flag-iOfbv9Du
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.jsonfile-JlGclri8
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.md5-file-8zTylPBT
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.mimic-fn-VPk2XPkT
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.react-is-GYJZ5iid
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.statuses-9wkEMv6Q
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.camelcase-HsCDwHBt
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.commander-Bw7EexMI
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.form-data-3K3YgDa0
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.is-docker-4CXqHwLD
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.lru-cache-KRl03LHz
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.cli-cursor-Hi10qgF5
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.strip-ansi-g4ybmfxs
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.is-arrayish-bzfn8Nza
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.log-symbols-WGbsgqc7
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.sudo-prompt-8dWny5op
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.loose-envify-UxwgkbMI
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.universalify-Pd0DhvlX
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.is-extendable-zg8N41it
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.extend-shallow-hVxgP1LY
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.restore-cursor-2GCm3RqX
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.supports-color-0vdpQgbC
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.metro-symbolicate-4svPUoUB
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.escape-string-regexp-r1Ee5hHq
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.metro-inspector-proxy-KLqY1wsv
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.is-fullwidth-code-point-89bcbNcO
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.rc-cCCqFxg7
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.ws-kiwCoM99
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.uuid-evkQmiRn
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.which-zT9bTxNo
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.semver-uuhDUSwz
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.xml-js-CUnRGmPT
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.type-fest-BrIO6V6F
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.uglify-es-KOgNtvez
+2023-09-13 14:39:55 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.source-map-xHtwbZHf
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:55 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.ob1-lJj0iLDv
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.temp-MGMf87Ym
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.cliui-W8hhjVqR
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.pngjs-08FL0K3M
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.terser-GT8TcyW8
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.fs-extra-gEC2SU6L
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.is-number-E2DTKEMA
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.image-size-lbPNSYUi
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.typescript-lXgdJPRv
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.ansi-styles-DW3HxWoW
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.browserslist-PxrdyMcW
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.yargs-parser-waaCEjDp
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.fast-xml-parser-VzXefy10
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.qrcode-terminal-mqJF8kuz
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.metro-source-map-sSEDWtPf
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.update-browserslist-db-t5z2aYqG
+2023-09-13 14:39:56 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.metro-react-native-babel-preset-U9C5D0Ta
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:56 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:57 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.y18n-wp5twOVD
+2023-09-13 14:39:57 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.yargs-px6dZy08
+2023-09-13 14:39:57 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.regjsparser-9qEXWp9V
+2023-09-13 14:39:57 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.ansi-escapes-bwiuh0Gx
+2023-09-13 14:39:57 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.metro-runtime-AYVGUahg
+2023-09-13 14:39:57 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.readable-stream-vMUpJbpN
+2023-09-13 14:39:57 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.expo-modules-autolinking-bK0DMH0K
+2023-09-13 14:39:57 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:57 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:57 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:57 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:57 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:57 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:57 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.ncp-04bCL4Tc
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.js-yaml-tim7KCEj
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.resolve-caXOqW4V
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.sucrase-UAUEimLY
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.logkitty-efEJnPfm
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.jscodeshift-6nJH9jFb
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.define-property-45rd9eND
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.expo-WDoKi9NS
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.metro-A1DJlhBc
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.react-native-htyXqIxj
+2023-09-13 14:39:58 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/.react-native-vector-icons-ik9eDYb5
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:39:58 error: SQLITE_ERROR: no such table: issues
+2023-09-13 14:40:12 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.3092225954
+2023-09-13 14:40:12 error: SQLITE_ERROR: no such table: issues
+2023-09-14 08:06:53 info: tempDirectory:c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-14 08:06:53 info: Extraction complete for source: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\resources\embold-scanner-archive.zip, destination: c:\Users\Xypher Solutions Inc\.vscode\extensions\embold-vscode.embold-0.1.5\temp
+2023-09-14 08:06:53 info: Congratulations, your extension "Embold" is now active!
+2023-09-14 08:07:02 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.vscode/.react
+2023-09-14 08:07:02 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.vscode/.react
+2023-09-14 08:07:03 error: SQLITE_ERROR: no such table: issues
+2023-09-14 08:07:03 error: SQLITE_ERROR: no such table: issues
+2023-09-14 08:29:34 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.1697524957
+2023-09-14 08:29:34 error: SQLITE_ERROR: no such table: issues
+2023-09-14 09:02:38 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.git/index.lock
+2023-09-14 09:02:38 error: SQLITE_ERROR: no such table: issues
+2023-09-14 09:03:16 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.git/index.lock
+2023-09-14 09:03:16 error: SQLITE_ERROR: no such table: issues
+2023-09-14 09:48:32 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/screens/Logged/Chat/List/ChatList
+2023-09-14 09:48:32 error: SQLITE_ERROR: no such table: issues
+2023-09-14 10:49:45 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.2735157327
+2023-09-14 10:49:45 error: SQLITE_ERROR: no such table: issues
+2023-09-14 10:50:17 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/node_modules/fsevents
+2023-09-14 10:50:17 error: SQLITE_ERROR: no such table: issues
+2023-09-14 10:51:27 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/settings.json.2508936549
+2023-09-14 10:51:27 error: SQLITE_ERROR: no such table: issues
+2023-09-14 11:15:02 info: file:///c%3A/Users/Xypher%20Solutions%20Inc/Desktop/Strat/FE/Strat/.expo/packager-info.json.1055066547
+2023-09-14 11:15:02 error: SQLITE_ERROR: no such table: issues

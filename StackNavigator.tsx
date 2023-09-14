@@ -36,6 +36,14 @@ const StackNavigator = () => {
   const Tab = createBottomTabNavigator();
   const { token, setUserData } = authorization();
 
+  useEffect(() => {
+    checkIfTokenExist();
+  }, []);
+
+  useEffect(() => {
+    checkIfTokenExist();
+  }, [token]);
+
   const checkIfTokenExist = async () => {
     const token = await getStorageValue("userToken");
     if (token) {
@@ -46,10 +54,6 @@ const StackNavigator = () => {
       }
     }
   };
-
-  useEffect(() => {
-    checkIfTokenExist();
-  }, []);
 
   const [authorized, setAuthorized] = useState<boolean>();
 
